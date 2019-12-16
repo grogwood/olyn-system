@@ -1,0 +1,11 @@
+127.0.0.1 <%= @local_server[:hostname] %>.<%= @local_server[:domain] %> <%= @local_server[:hostname] %> <%= @local_server[:domain] %> <%= @local_server[:url] unless @local_server[:url] == @local_server[:domain] %> localhost
+<% @server_data_bag.each do |server_item| -%>
+<% server = Chef::DataBagItem.load('servers', server_item) -%>
+<% next if server[:hostname] == @local_server[:hostname] || server[:cluster] != @local_server[:cluster] -%>
+<%= server[:ip] %> <%= server[:hostname] %>.<%= server[:domain] %> <%= server[:hostname] %>
+<% end -%>
+
+# The following lines are desirable for IPv6 capable hosts
+::1     <%= @local_server[:hostname] %>.<%= @local_server[:domain] %> <%= @local_server[:hostname] %> <%= @local_server[:domain] %> <%= @local_server[:url] unless @local_server[:url] == @local_server[:domain] %> localhost ip6-localhost ip6-loopback
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
