@@ -1,2 +1,2 @@
 # Timezone
-default[:olyn_system][:timezone] = 'UTC'
+default[:olyn_system][:config][:timezone] = 'UTC'

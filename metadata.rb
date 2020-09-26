@@ -6,7 +6,7 @@ license 'GPL-3.0'
 supports 'debian', '>= 10'
 source_url 'https://gitlab.com/olyn/olyn_system'
 description 'Installs and configures system resources'
-version '1.0.2'
+version '1.0.3'
 
 provides 'olyn_system::default'
 provides 'olyn_system::hosts'
