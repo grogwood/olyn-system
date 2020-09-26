@@ -1,2 +1,2 @@
 # Set the timezone
-timezone node[:olyn_system][:timezone]
+timezone node[:olyn_system][:config][:timezone]
